@@ -1,0 +1,401 @@
+:root {
+    --height-testomial: 800px;
+    --size-card-image: 70px;
+}
+
+
+
+/* ediciones a boostrap */
+
+.form-control:focus, .overlay .btn:focus {
+    border-color: #f7f7f7;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(247, 247, 247, 0.6);
+    box-shadow: none;
+}
+
+.main-banner .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control {
+    border: none;
+    border-radius: 0;
+}
+/* Estilos del navegador */
+.logo-pagina {
+    height: 50px;
+    width: 50px;
+}
+
+.nav-item {
+    margin: 5px;
+}
+
+/* Estilos de banner */
+
+.main-banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.main-banner::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    background: linear-gradient(to right, rgb(30, 30, 218), rgb(224, 32, 32));
+    clip-path: polygon(0 0, 36% 0, 50% 100%, 0% 100%);
+}
+
+.container-text-banner {
+    height: 100%;
+}
+
+.container-text-banner .form-control {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.container-text-banner .banner-text {
+    color: white;
+}
+
+.container-text-banner .banner-text>.lead {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/*  rgb(30, 30, 218)
+    rgb(224, 32, 32)
+*/
+
+/* estilos de cursos */
+
+.container-courses {
+    padding-top: 10px;
+}
+
+.container-courses .icono-terminal-text {
+    margin-top: 15px;
+    margin-right: 30px;
+    height: 50px;
+    opacity: 0;
+    animation: show-hidden .4s infinite alternate;
+}
+
+.container-courses .course > .body a.btn {
+    margin: 20px 0;
+}
+
+@keyframes show-hidden {
+    to {
+        opacity: 1;
+    }
+}
+
+.container-courses .text-container-courses {
+    font-size: 25px;
+    /* animation: ajustar .5s */
+}
+
+.container-courses .box-all-courses {
+    padding: 50px;
+    background: rgb(242, 242, 242);
+}
+
+.container-card#course {
+    opacity: 0;
+    margin: 50px auto 50px auto;
+    transform: translateY(20px);
+}
+
+.card.course {
+    border: none;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    transition: .2s all;
+}
+
+.card.course:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 12px 3px rgba(0, 0, 0, 0.4);
+}
+
+.card.course .image-header {
+    position: relative;
+    width: 80px;
+    margin: -60px auto 0 auto;
+}
+
+.card.course:hover .image-header {
+    transform: translateY(10px);
+    animation: mover .5s forwards;
+}
+
+.card.course .body {
+    margin-top: 30px;
+}
+
+.container-card#course.animate {
+    animation: aparecer 1s forwards;
+}
+
+/* Animaciones de todas las cards de cursos */
+
+@keyframes aparecer {
+    to {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}
+
+@keyframes mover {
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+/* Estilos de advantage */
+
+.container-advantage .card-advantage-img {
+    min-height: 30rem;
+    background-size: cover;
+}
+
+.container-advantage .card-advantage-text {
+    padding: 5em;
+}
+
+/* Estilos de testimonial */
+
+.section-testimonial {
+    max-height: var(--height-testomial);
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.container-parts-testimonial {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: var(--height-testomial);
+}
+
+.container-parts-testimonial .card-testimonial .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-testimonial .card-testimonial-image {
+    height: var(--size-card-image);
+    width: var(--size-card-image);
+    border-radius: 50%;
+    transform: translateZ(-10px);
+}
+
+/* para editar el estilo del scroll */
+.container-parts-testimonial::-webkit-scrollbar {
+    width: 1px;
+}
+
+
+
+/* Estilo thumb  para el scroll*/
+.container-parts-testimonial::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+
+div[class*=-part-testimonial] {
+    max-width: 45%;
+}
+
+.container-parts-testimonial .right-part-testimonial {
+    margin-top: 100px;
+}
+
+.container-parts-testimonial .card {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: none;
+    border: 1px rgba solid;
+    margin: 20px;
+}
+
+/* para animar las letras del textimonial */
+
+[class*=text-testimonial-] {
+    opacity: 0;
+}
+
+.animar-texto [class*=text-testimonial-] {
+    animation: animar-text 1s forwards;
+}
+
+.testimonial-paragraphs .text-testimonial-1 {
+    transform: translateY(-50px);
+}
+
+.testimonial-paragraphs .text-testimonial-2 {
+    transform: translateX(50px);
+}
+
+.testimonial-paragraphs .text-testimonial-3 {
+    transform: translateY(50px);
+}
+
+@keyframes animar-text {
+    to {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+/* Estilos del footer */
+
+.footer {
+    background: rgb(36, 36, 34);
+    height: 320px;
+}
+
+.footer .encabezado-footer {
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.footer .encabezado-footer>h1 {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    font-size: 50px;
+}
+
+.footer .borde-inferior-encab-f {
+    display: block;
+    border-top: 3px solid rgb(246, 85, 76);
+    width: 50px;
+    margin: 0 auto;
+}
+
+.footer .encabezado-footer p {
+    margin-top: 50px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+}
+
+.footer .contenedor-redes {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contenedor-redes>a[class*="icon-"] {
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    transition: 0.3s;
+    color: white;
+}
+
+.contenedor-redes>a[class*="icon-"]:hover {
+    text-decoration: none;
+    border: 3px solid white;
+}
+
+.footer .copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background: rgb(31, 31, 30);
+    text-align: center;
+}
+
+.copy .texto-derechos {
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 10px;
+}
+
+.copy .texto-autor {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.copy .texto-autor a {
+    color: white;
+    transition: 0.5s;
+}
+
+.copy .texto-autor a:hover {
+    text-decoration: none;
+    color: rgb(246, 85, 76);
+}
+
+/* Fin de estilos del footer */
+
+/* Estilos de los planes a ofrecer */
+
+#container-planes {
+    overflow: hidden;
+}
+
+.plan-card {
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.plan-card:hover {
+    transform: rotate(0deg);
+    animation: vibracion .2s alternate infinite;
+}
+
+@keyframes vibracion{
+    to {
+        transform: rotate(.3deg);
+    }
+}
+
+.plan-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.plan-card .card-head p {
+    /* color: rgba(0, 0, 0, 0.5); */
+}
+
+.plan-card .list-features-plan {
+    width: 100%;
+    list-style: none;
+}
+
+.list-features-plan .item-feature {
+    padding: 10px;
+}
+
+.list-features-plan .icon-feature {
+    width: 30px;
+    height: 30px;
+}
+
+.card-plan-basico .card-price-plan, .card-plan-basico .card-title-plan{
+    color: rgb(144, 98, 180);
+}
+.card-plan-intermedio .card-price-plan, .card-plan-intermedio .card-title-plan{
+    color: rgb(241, 150, 112);
+}
+.card-plan-avanzado .card-price-plan, .card-plan-avanzado .card-title-plan{
+    color: rgb(190, 81, 104);
+}
